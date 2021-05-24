@@ -1,0 +1,67 @@
+{
+  "info": {
+    "_postman_id": "7742dc3f-d658-4a5a-a244-df46672231e3",
+    "name": "FirstPrincipalPractical",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Testimonial",
+      "id": "a914c81f-5ce9-4f1c-885b-f6540d940712",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"authorName\": \"Author Three\",\n    \"authorImage\": \"\",\n    \"authorDesignation\": \"CA, India\",\n    \"message\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.maulikpatel.in/api/testimonial"
+      },
+      "response": []
+    },
+    {
+      "name": "Update Testimonial",
+      "id": "c25c40b2-2dab-4abb-92af-65226cc9f7cf",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"authorName\": \"Author Four\",\n    \"authorImage\": \"\",\n    \"authorDesignation\": \"CA, Canada\",\n    \"message\": \"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "https://api.maulikpatel.in/api/testimonial/60ab95ec31a36506130a673b"
+      },
+      "response": []
+    },
+    {
+      "name": "List of Testimonial",
+      "id": "3aa0fa2b-2f21-4344-be22-ffabcc6fb4c8",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": "https://api.maulikpatel.in/api/testimonial"
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Testimonial",
+      "id": "6c60be5a-5d0c-432c-b51c-aa13e17f33f4",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": "https://api.maulikpatel.in/api/testimonial/60ab9c4f0eec30074b235dc9"
+      },
+      "response": []
+    }
+  ]
+}
