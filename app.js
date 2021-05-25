@@ -43,6 +43,33 @@ app.use(cookieParser());
 
 db.getConnection(config.db);
 
+app.use((req, res, next) => {
+  let res_code = '';
+  if (req.query.res_code) {
+    res_code = req.query.res_code;
+  }
+  res.res_code = res_code;
+
+  let origin = '*'; // Default Origin
+  if (req.headers.origin) {
+    origin = req.headers.origin;
+  }
+
+  res.header('Access-Control-Allow-Origin', origin);
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept, Token, Timestamp, X-Requested-With, Authorization'
+  );
+  res.header('Access-Control-Allow-Credentials', true);
+
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
+
 routes.initialize(app);
 
 // 404 route
