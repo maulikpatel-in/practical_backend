@@ -13,7 +13,7 @@ exports.add = async data => {
 
 exports.list = async () => {
   try {
-    return await Testimonial.find().lean();
+    return await Testimonial.find({ Active: 1 }).lean();
   } catch (error) {
     logger.error(error);
     return new Error(error);
@@ -22,7 +22,7 @@ exports.list = async () => {
 
 exports.delete = async _id => {
   try {
-    return await Testimonial.findOneAndDelete({ _id }).lean();
+    return await Testimonial.updateOne({ _id }, { Active: 0 }).lean();
   } catch (error) {
     logger.error(error);
     return new Error(error);

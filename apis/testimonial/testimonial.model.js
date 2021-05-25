@@ -2,10 +2,15 @@ const mongoose = require('mongoose');
 
 const testimonialSchema = new mongoose.Schema(
   {
-    authorName: String,
-    authorImage: String,
-    authorDesignation: String,
-    message: String
+    Name: String,
+    Photo: String,
+    Post: String,
+    Testimonial_Description: String,
+    Active: {
+      type: Number,
+      default: 1,
+      enum: [0, 1]
+    }
   },
   {
     timestamps: true
